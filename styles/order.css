@@ -1,0 +1,508 @@
+/* 
+ * Created by John Christian Linaban for Intro to Computing
+ * All rights reserved © 2025
+*/
+
+:root {
+    --background-color: #5a2829;
+    --primary-color: #411c1c;
+    --secondary-color: #D5C5AF;
+    --text-color: white;
+    --hover-background-color: #2e1414;
+    --hover-text-color: #5a2829;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --box-shadow-hover-color: rgba(0, 0, 0, 0.3);
+    --footer-background-color: #411c1c;
+}
+
+/* Base Styles */
+html, body {
+    background-color: var(--background-color);
+    font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+#navbar {
+    background: linear-gradient(to bottom right, var(--footer-background-color), var(--footer-background-color));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    box-shadow: 0px 2px 20px var(--box-shadow-color);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#navbar .brand-logo {
+    color: var(--text-color);
+    text-align: center;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#navbar .brand-logo h1 {
+    margin: 0;
+    padding: 0;
+    font-size: clamp(2.5rem, 4vw, 3rem); /* Decrease font size */
+    letter-spacing: 1px;
+}
+
+#navbar .navbar-menu {
+    margin: 0;
+    padding-bottom: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#order-section {
+    text-align: center; /* Center text */
+}
+
+.navbar-menu-item a {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.navbar-menu-item a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Position the line below the text */
+    left: 0; 
+    width: 0; 
+    height: 2px; /* Thickness of the line */
+    background-color: var(--secondary-color); /* Line color */
+    z-index: -1; /* Keep it behind the text */
+    transition-property: width;
+    transition-duration: 0.4s;
+    transition-timing-function: ease; /* Smooth animation */
+}
+
+.navbar-menu-item a:hover::before {
+    width: 100%; /* Extend the line under the link */
+}
+
+.navbar-menu-items {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Content Styles */
+.main-content {
+    margin-top: clamp(100px, 20vw, 120px);
+    font-family: 'Open Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+    flex: 0 0 70%;
+    margin-inline-end: 1rem;
+}
+
+.box {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 2px 10px var(--box-shadow-color);
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 20px var(--box-shadow-hover-color);
+    cursor: pointer;
+}
+
+.box:active {
+    background-color: var(--hover-background-color);
+    transform: scale(0.95);
+    box-shadow: 0px 4px 20px var(--box-shadow-hover-color);
+}
+
+.box.added {
+    animation: added-to-cart 0.5s ease-in-out;
+}
+
+@keyframes added-to-cart {
+    0% {
+        transform: scale(1);
+        background-color: var(--primary-color);
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: var(--secondary-color);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--primary-color);
+    }
+}
+
+.box-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-content {
+    padding: 1rem;
+    text-align: center;
+}
+
+.box-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.box-description {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.cart {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px var(--box-shadow-color);
+    margin-top: 2rem;
+    flex: 0 0 30%;
+}
+
+.cart h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--hover-background-color);
+}
+
+.cart li:last-child {
+    border-bottom: none;
+}
+
+.cart-total {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--secondary-color);
+}
+
+.cart button {
+    background-color: var (--secondary-color);
+    color: var(--hover-text-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.cart button:hover {
+    background-color: var(--hover-background-color);
+    color: var(--text-color);
+}
+
+.cart .remove-btn {
+    background-color: var(--hover-background-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.1rem 0.3rem; /* Make the button smaller */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.75rem; /* Make the button text smaller */
+    width: 10%;
+}
+
+.cart .remove-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-in-out; /* Add fade-in animation */
+}
+
+.modal-content {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px var(--box-shadow-color);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out; /* Add slide-in animation */
+    color: var(--text-color); /* Set modal text color to white */
+}
+
+.close {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.modal-content input,
+.modal-content textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.modal-content button {
+    background-color: var(--secondary-color);
+    color: var(--hover-text-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: var(--hover-background-color);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Carousel Styles */
+.carousel-slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire element */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center; /* Center align items */
+    }
+
+    .grid {
+        margin-inline-end: 0;
+        justify-items: center; /* Center grid items */
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;;
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0;
+        padding-block: 1rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        box-shadow: 0px -2px 10px var(--box-shadow-color);
+        z-index: 1000;
+    }
+
+    .cart-total {
+        text-align: center;
+    }
+
+    .cart ul {
+        display: none; /* Hide cart items */
+    }
+
+    .cart.show-items ul {
+        display: block; /* Show cart items when toggled */
+        width: 80%;
+    }
+
+    .cart.show-items {
+        height: 80%; /* Full screen height */
+        overflow-y: auto;
+    }
+
+    .cart button {
+        width: 80%;
+    }
+
+    .cart-toggle-btn {
+        display: block;
+        background-color: var(--secondary-color);
+        color: var(--hover-text-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .cart-toggle-btn:hover {
+        background-color: var(--hover-background-color);
+    }
+
+    #order-section {
+        flex: 0 0 100%;
+        text-align: center; /* Center text */
+    }
+
+    #cart-section {
+        flex: 0 0 100%;
+        margin-top: 2rem;
+        text-align: center; /* Center text */
+    }
+
+    .box {
+        position: relative;
+        width: 100%; /* Block size width */
+        height: auto; /* Adjust height */
+    }
+
+    .box-image {
+        height: auto;
+    }
+
+    .box-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: var(--text-color);
+        padding: 0.5rem;
+        text-align: center;
+    }
+
+    .box-title {
+        font-size: 0.875rem; /* Smaller font size */
+        margin-bottom: 0.25rem;
+    }
+
+    .box-description {
+        font-size: 0.75rem; /* Smaller font size */
+        margin: 0;
+    }
+
+    #navbar {
+        height: 12vh; /* Decrease navbar height */
+    }
+
+    #navbar .brand-logo h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem); /* Decrease font size */
+        margin-top: 1.5rem;
+        padding: 0;
+    }
+
+    #navbar .navbar-menu {
+        padding-bottom: 1.5rem;
+    }
+
+    section {
+        scroll-margin-top: 10vh; /* Adjust scroll padding for sections */
+    }
+}

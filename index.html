@@ -1,0 +1,242 @@
+<!-- 
+ * Created by John Christian Linaban for Intro to Computing
+ * All rights reserved © 2025
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for SEO and responsiveness -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FM Kitchen offers high-quality, delicious meals at affordable prices. Order now and satisfy your cravings!">
+    <meta property="og:title" content="FM Kitchen">
+    <meta property="og:description" content="FM Kitchen offers high-quality, delicious meals at affordable prices. Order now and satisfy your cravings!">
+    <meta property="og:url" content="https://fm-kitchen.vercel.app">
+    
+    <!-- <meta name="robots" content="index, follow"> -->
+
+    <!-- Link to external stylesheets and favicon -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>FM Kitchen</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar" class="full">
+            <!-- Brand logo -->
+            <div class="brand-logo">
+                <h1>FM Kitchen</h1>
+            </div>
+            <!-- Hamburger menu for mobile view -->
+            <button class="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Navigation menu items -->
+            <div class="navbar-menu">
+                <ul class="navbar-menu-items">
+                    <li class="navbar-menu-item"><a href="#">Home</a></li>
+                    <li class="navbar-menu-item"><a href="#menu-section">Menu</a></li>
+                    <li class="navbar-menu-item"><a href="#about-section">About</a></li>
+                    <li class="navbar-menu-item"><a href="#section-3">Contact</a></li>
+                    <li class="navbar-menu-item"><a class="order-now" href="./order.html">Order Now</a></li>
+                    <li class="navbar-menu-item navbar-search shrink-only">
+                        <input type="text" placeholder="Search..." aria-label="Search">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content" role="main">
+        <!-- Carousel section -->
+        <section id="section-1" class="carousel">
+            <div class="carousel-slides active">
+                <div class="carousel-text fade-in">
+                    <h2>Order Now</h2>
+                    <h3>Hunger Ends Here—Order Today!</h3>
+                </div>
+                <img src="./img/001.webp" alt="Delicious meal">
+            </div>
+            <div class="carousel-slides">
+                <div class="carousel-text fade-in">
+                    <h2>Satisfy Your Cravings</h2>
+                    <h3>Cravings? Consider Them Solved!</h3>
+                </div>
+                <img src="./img/002.webp" alt="Tasty food">
+            </div>
+            <div class="carousel-slides">
+                <div class="carousel-text fade-in">
+                    <h2>Affordable Prices</h2>
+                    <h3>Affordable Doesn’t Mean Compromise!</h3>
+                </div>
+                <img src="./img/003.webp" alt="Affordable meal">
+            </div>
+        
+            <div class="carousel-controls">
+                <span class="carousel-control active" onclick="toggleCarousel(0)"></span>
+                <span class="carousel-control" onclick="toggleCarousel(1)"></span>
+                <span class="carousel-control" onclick="toggleCarousel(2)"></span>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about-section">
+            <h1 class="fade-in" style="color: white;">Where Joy Meets Flavor!</h1>
+            <h2 class="fade-in section-element">
+                At FM Kitchen, we believe that food is more than just a meal—it's an experience of joy, connection, and delight. Our mission is to serve our customers with heartfelt hospitality, offering a menu full of high-quality, delicious meals crafted with care. From the first bite to the last, every dish is thoughtfully prepared to bring smiles to your table.<br><br>
+                We are proud to create a space where everyone can indulge in great-tasting food without stretching their budget. Whether you're stopping by for a quick bite, a family meal, or a gathering with friends, FM Kitchen welcomes you with open arms and a promise of flavors that satisfy and moments you'll cherish.
+            </h2>
+        </section>
+
+        <!-- Menu selection section -->
+        <section id="section-2">
+            <h1 class="fade-in" style="color: white;">Select your meal!</h1>
+            <h2 class="fade-in section-element" style="color: white;">
+                Our menu is designed to cater to all tastes and budgets. We have a variety of delicious, budget-friendly meals to choose from!
+            </h2>
+            <div class="grid section-element">
+                <a class="box" href="#budget-meals">
+                    <div class="box-image">
+                        <img src="./img/budget-meal.webp" alt="Budget meal">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Budget Meal</h3>
+                        <p class="box-description">Affordable and tasty options for everyone.</p>
+                    </div>
+                </a>
+                <a class="box" href="#special-meals">
+                    <div class="box-image">
+                        <img src="./img/special-meal.webp" alt="Special meal">
+                    </div>
+                    <div class="box-content">
+                        <h3 class="box-title">Special Meal</h3>
+                        <p class="box-description">Premium meals for special moments.</p>
+                    </div>
+                </a>
+            </div>
+            <a id="order-now" href="./order.html">Order Now</a></li>
+        </section>
+
+        <!-- Menu introduction section -->
+        <section id="menu-intro">
+            
+        </section>
+
+        <!-- Menu section -->
+        <section id="menu-section">
+            <h2 class="fade-in">Our Menu</h2>
+            <div class="budget-meals" id="budget-meals">
+                <h3>Budget Meals</h3>
+                <ul>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Tapsilog</a><span class="price">$69</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Tocilog</a><span class="price">$69</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Skinsilog</a><span class="price">$60</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Hotsilog</a><span class="price">$55</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Hamsilog</a><span class="price">$50</span></li>
+                </ul>
+            </div>
+            <div class="special-meals" id="special-meals">
+                <h3>Special Meals</h3>
+                <ul>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Chickchaolog</a><span class="price">$95</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Porkchaolog</a><span class="price">$79</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Bangchaolog</a><span class="price">$85</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Tapchaolog</a><span class="price">$79</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Tochaolog</a><span class="price">$70</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Skinchaolog</a><span class="price">$69</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Hotchaolog</a><span class="price">$63</span></li>
+                    <li><a href="./order.html" class="item" style="text-decoration: none;">Hamchaolog</a><span class="price">$59</span></li>
+                </ul>
+            </div>   
+        </section>
+
+        <!-- Contact section -->
+        <section id="section-3">
+            <h2 class="fade-in">Contact Us</h2>
+            <div class="contact-info section-element">
+                <div class="contact-image">
+                    <a href="https://www.facebook.com/messages/t/383291271541722" target="_blank">
+                        <img src="./img/profile.webp" alt="FM Kitchen Facebook Profile">
+                    </a>
+                </div>
+                <div class="contact-details fade-in">
+                    <p>Follow us on:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61565682562642" target="_blank" rel="noopener noreferrer" aria-label="Visit FM Kitchen on Facebook">
+                            <img src="./img/fb-ico.png" alt="Facebook Icon">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/fm_kitch3n?igsh=MXB2cDFnem0ybjgxZQ==" target="_blank" rel="noopener noreferrer" aria-label="Visit FM Kitchen on Instagram">
+                            <img src="./img/ig-ico.png" alt="Instagram Icon">
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to top button -->
+        <div id="back-to-top" onclick="backtop()">
+            <span>&uarr;</span>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 FM Kitchen. All Rights Reserved.</p>
+            <div class="footer-menu">
+                <ul class="footer-menu-items">
+                    <li class="footer-menu-item"><a href="#">Home</a></li>
+                    <li class="footer-menu-item"><a href="#menu-section">Menu</a></li>
+                    <li class="footer-menu-item"><a href="#">About</a></li>
+                    <li class="footer-menu-item"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- External JavaScript file -->
+    <script src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.navbar-search input');
+            
+            searchInput.addEventListener('input', function() {
+                const highlightedElements = document.querySelectorAll('.highlight');
+                highlightedElements.forEach(element => {
+                    element.classList.remove('highlight');
+                    element.innerHTML = element.textContent; // Remove the highlight span
+                });
+            });
+
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const elements = document.querySelectorAll('body *:not(script):not(style):not(input):not(nav):not(nav *)');
+                    let firstHighlightedElement = null;
+                    
+                    elements.forEach(element => {
+                        if (element.children.length === 0 && element.textContent) {
+                            const text = element.textContent.toLowerCase();
+                            if (text.includes(searchTerm)) {
+                                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                                element.innerHTML = element.textContent.replace(regex, '<span class="highlight">$1</span>');
+                                if (!firstHighlightedElement) {
+                                    firstHighlightedElement = element;
+                                }
+                            } else {
+                                element.innerHTML = element.textContent;
+                            }
+                        }
+                    });
+
+                    if (firstHighlightedElement) {
+                        firstHighlightedElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
